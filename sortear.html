@@ -13,45 +13,50 @@
     <h1>Selecione um Nome</h1>
 
     <div class="grid">
-      <button id="sonia">Vó Sônia</button>
-      <button>Vô Zé</button>
-      <button>Vinicius</button>
-      <button>Thiago</button>
-      <button>Claudiane</button>
-      <button>Sr. Sérgio</button>
-      <button>Theodoro</button>
-      <button>Cássia</button>
-      <button>Felipe</button>
-      <button>Leonardo</button>
-      <button>Camila</button>
-      <button>Marcelo</button>
-      <button>Eric</button>
-      <button>Carina</button>
-      <button>Jorge</button>
-      <button>Elisa</button>
-      <button>Maíra</button>
-      <button>Jorginho</button>
-      <button>Caroline</button>
-      <button>Flavio</button>
-      <button>Nikolai</button>
-      <button>Maya</button>
-      <button>Ingrid</button>
+    <button data-senha="neblina47" data-link="sonia.html">Vó Sônia</button>
+    <button data-senha="horizonte12" data-link="VoZe.html">Vô Zé</button>
+    <button data-senha="lapis89" data-link="vinicius.html">Vinicius</button>
+    <button data-senha="fragmento34" data-link="thiago.html">Thiago</button>
+    <button data-senha="coral73" data-link="clau.html">Claudiane</button>
+    <button data-senha="bruma5" data-link="sergio.html">Sr. Sérgio</button>
+    <button data-senha="estilhaco62" data-link="theo.html">Theodoro</button>
+    <button data-senha="sou-muito-mala" data-link="cassia.html">Cássia</button>
+    <button data-senha="tregua18" data-link="felipe.html">Felipe</button>
+    <button data-senha="galaxia51" data-link="leonardo.html">Leonardo</button>
+    <button data-senha="papiro7" data-link="camila.html">Camila</button>
+    <button data-senha="cupula83" data-link="marcelo.html">Marcelo</button>
+    <button data-senha="trilho29" data-link="eric.html">Eric</button>
+    <button data-senha="safira100" data-link="carina.html">Carina</button>
+    <button data-senha="relampago41" data-link="jorge.html">Jorge</button>
+    <button data-senha="circulo9" data-link="elisa.html">Elisa</button>
+    <button data-senha="estuario64" data-link="maira.html">Maíra</button>
+    <button data-senha="marfim22" data-link="jorginho.html">Jorginho</button>
+    <button data-senha="abstrato58" data-link="caroline.html">Caroline</button>
+    <button data-senha="orvalho13" data-link="flavio.html">Flavio</button>
+    <button data-senha="labirinto76" data-link="nikolai.html">Nikolai</button>
+    <button data-senha="padaria31" data-link="maya.html">Maya</button>
+    <button data-senha="ambar94" data-link="ingrid.html">Ingrid</button>
     </div>
   </div>
 </body>
 
 
     <script>
-document.getElementById("sonia").addEventListener("click", () => {
-  const senha = prompt("Digite a senha:");
+  document.querySelectorAll("button").forEach(botao => {
+    botao.addEventListener("click", () => {
 
-  if (senha === "1234") { //Senha da Sônia
-    window.location.href = "sonia.html";
-  } else if (senha !== null) {
-    alert("SENHA INCORRETA.");
-  }
-});
+      const senhaCorreta = botao.dataset.senha;
+      const linkDestino = botao.dataset.link;
 
+      const senhaDigitada = prompt("Digite a senha:");
+
+      if (senhaDigitada === senhaCorreta) {
+        window.location.href = linkDestino;
+      } else if (senhaDigitada !== null) {
+        alert("SENHA INCORRETA.");
+      }
+    });
+  });
 </script>
 
 </html>
