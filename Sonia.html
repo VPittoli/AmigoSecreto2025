@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Vó Sônia</title>
+  <link rel="stylesheet" href="css/sonia.css">
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Sorteando Amigo Secreto...</h2>
+  <div id="display">Carregando...</div>
+</div>
+
+<script>
+const nomes = [
+  "Cassia", "Felipe", "Leo", "Camila", "Marcelo", "Eric", "Vinicius",
+  "Vó Sônia", "Vô Zé", "Thiago", "Claudiane", "Theodoro", "Seu Sérgio",
+  "Carina", "Jorge", "Maíra", "Elisa", "Jorginho", "Caroline",
+  "Flavio", "Ingrid", "Maya", "Nikolai"
+];
+
+// Resultado final desejado
+const escolhido = "Leonardo";
+
+let interval;
+
+function girar() {
+  clearInterval(interval);
+  const display = document.getElementById("display");
+  display.classList.remove("highlight");
+
+  // Nomes mudando rapidamente
+  interval = setInterval(() => {
+    const nome = nomes[Math.floor(Math.random() * nomes.length)];
+    display.textContent = nome;
+  }, 80);
+
+  // Para depois de 3 segundos
+  setTimeout(() => {
+    clearInterval(interval);
+    display.textContent = escolhido;
+    display.classList.add("highlight");
+  }, 3000);
+}
+
+// Inicia automaticamente ao abrir a página
+window.onload = () => setTimeout(girar, 300);
+</script>
+
+</body>
+</html>
