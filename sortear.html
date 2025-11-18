@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Nomes</title>
+  <link rel="stylesheet" href="css/sortear.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Selecione um Nome</h1>
+
+    <div class="grid">
+      <button id="sonia">Vó Sônia</button>
+      <button>Vô Zé</button>
+      <button>Vinicius</button>
+      <button>Thiago</button>
+      <button>Claudiane</button>
+      <button>Sr. Sérgio</button>
+      <button>Theodoro</button>
+      <button>Cássia</button>
+      <button>Felipe</button>
+      <button>Leonardo</button>
+      <button>Camila</button>
+      <button>Marcelo</button>
+      <button>Eric</button>
+      <button>Carina</button>
+      <button>Jorge</button>
+      <button>Elisa</button>
+      <button>Maíra</button>
+      <button>Jorginho</button>
+      <button>Caroline</button>
+      <button>Flavio</button>
+      <button>Nikolai</button>
+      <button>Maya</button>
+      <button>Ingrid</button>
+    </div>
+  </div>
+</body>
+
+
+    <script>
+document.getElementById("sonia").addEventListener("click", () => {
+  const senha = prompt("Digite a senha:");
+
+  if (senha === "1234") { //Senha da Sônia
+    window.location.href = "sonia.html";
+  } else if (senha !== null) {
+    alert("SENHA INCORRETA.");
+  }
+});
+
+</script>
+
+</html>

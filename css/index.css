@@ -1,0 +1,130 @@
+:root {
+  --overlay: rgba(0,0,0,0.40);
+  --accent: #ffb703;
+  --btn-radius: 14px;
+  --glass: rgba(255,255,255,0.10);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+  background-image: url('../familia.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px; /* garante respiro em celulares estreitos */
+}
+
+/* camada escura para dar contraste */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+}
+
+/* card principal */
+.card {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+  width: 100%;
+  padding: 26px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--glass), rgba(255,255,255,0.04));
+  backdrop-filter: blur(9px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.55);
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 1.55rem;
+  line-height: 1.25;
+}
+
+p.lead {
+  margin: 0 0 22px;
+  opacity: 0.92;
+  font-size: 1rem;
+}
+
+/* botões otimizados para touch */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--btn-radius);
+  border: 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .14s ease;
+  touch-action: manipulation;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff7b00, #ffb703);
+  color: #0c141c;
+  box-shadow: 0 6px 20px rgba(255,183,3,0.28);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 26px rgba(255,183,3,0.32);
+}
+
+.btn-ghost {
+  margin-top: 12px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* créditos */
+.credits {
+  font-size: 0.82rem;
+  margin-top: 18px;
+  opacity: 0.82;
+}
+
+/* responsividade real para celulares pequenos */
+@media (max-width: 420px) {
+  .card {
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  h1 {
+    font-size: 1.45rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  .card {
+    padding: 18px 14px;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amigo Secreto</title>
+  <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <main class="card" role="main" aria-labelledby="titulo">
+    <h1 id="titulo">Amigo Secreto 2025</h1>
+
+    <button id="sortearBtn" class="btn btn-primary">Sortear amigo oculto</button>
+    <button id="listaBtn" class="btn btn-ghost" aria-label="Lista de presentes">Lista de presentes</button>
+
+    <script>
+    document.getElementById("sortearBtn").addEventListener("click", () => {
+    window.location.href = "sortear.html";
+  });
+    document.getElementById("listaBtn").addEventListener("click", () => {
+    window.location.href = "presentes.html";
+  });
+</script>
+
+  </main>
+
+</body>
+</html>
